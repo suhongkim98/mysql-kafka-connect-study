@@ -12,6 +12,7 @@ cd ./infra
 docker compose up
 ```
 - mysql은 `schema.sql`을 초기화하며 DB를 생성
+- kafka connect는 구동하며 source connector에서 사용할 데비지움 커넥터를 설치 (command 참고)
 
 ### 1-2. kafka ui 접속
 ```
@@ -27,6 +28,7 @@ curl -X POST -H "Content-Type: application/json" \
 -d @./source-connector/source.json http://localhost:8083/connectors -w "\n"
 ```
 
+### 2-2. connector 연결 확인
 ```
 curl -X GET -H "Content-Type: application/json" \
 http://localhost:8083/connectors

@@ -14,7 +14,7 @@ services:
 
   zookeeper-1:
     container_name: zookeeper-1
-    image: confluentinc/cp-zookeeper:7.6.0
+    image: confluentinc/cp-zookeeper:7.6.1
     ports:
       - "2181:2181"
     depends_on:
@@ -27,7 +27,7 @@ services:
 
   kafka-1:
     container_name: kafka-1
-    image: confluentinc/cp-kafka:7.6.0
+    image: confluentinc/cp-kafka:7.6.1
     ports:
       - '9092:9092'
     depends_on:
@@ -45,7 +45,7 @@ services:
 
   kafka-2:
     container_name: kafka-2
-    image: confluentinc/cp-kafka:7.6.0
+    image: confluentinc/cp-kafka:7.6.1
     ports:
       - '9093:9093'
     depends_on:
@@ -63,7 +63,7 @@ services:
 
   kafka-3:
     container_name: kafka-3
-    image: confluentinc/cp-kafka:7.6.0
+    image: confluentinc/cp-kafka:7.6.1
     ports:
       - '9094:9094'
     depends_on:
@@ -80,7 +80,7 @@ services:
       - localnet
 
   schema-registry:
-    image: confluentinc/cp-schema-registry:7.6.0
+    image: confluentinc/cp-schema-registry:7.6.1
     hostname: schema-registry
     container_name: schema-registry
     ports:
@@ -97,7 +97,7 @@ services:
       SCHEMA_REGISTRY_LISTENERS: http://0.0.0.0:8081
 
   rest-proxy:
-    image: confluentinc/cp-kafka-rest:7.6.0
+    image: confluentinc/cp-kafka-rest:7.6.1
     depends_on:
       - zookeeper-1
       - kafka-1
@@ -115,7 +115,7 @@ services:
       KAFKA_REST_SCHEMA_REGISTRY_URL: "http://schema_registry:8081"
 
   Kafka-connect-1:
-    image: confluentinc/cp-kafka-connect:7.6.0
+    image: confluentinc/cp-kafka-connect:7.6.1
     container_name: Kafka-connect-1
     depends_on:
       - kafka-1
