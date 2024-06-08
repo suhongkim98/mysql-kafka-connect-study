@@ -29,7 +29,7 @@ dependencies {
 
 	annotationProcessor 'org.projectlombok:lombok'
 
-	runtimeOnly 'com.h2database:h2'
+	implementation 'com.mysql:mysql-connector-j'
 }
 
 tasks.named('test') {
