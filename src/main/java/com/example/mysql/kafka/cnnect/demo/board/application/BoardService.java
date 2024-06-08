@@ -52,6 +52,10 @@ public class BoardService {
         boardRepository.delete(board);
     }
 
+    public void deleteAllBoards() {
+        boardRepository.deleteAll();
+    }
+
     public GetBoardsResponse getBoards() {
         List<Board> boards = boardRepository.findAll();
         return GetBoardsResponse.from(boards);

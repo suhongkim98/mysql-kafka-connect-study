@@ -1,10 +1,5 @@
 # Docker로 infra 구축
 
-## cd infra
-```
-cd ./infra
-```
-
 ## 1. docker-compose up
 
 ### 1-1. docker run

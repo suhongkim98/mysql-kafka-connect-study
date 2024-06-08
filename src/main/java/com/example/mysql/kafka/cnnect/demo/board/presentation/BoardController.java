@@ -29,6 +29,11 @@ public class BoardController {
         boardService.updateBoard(userId, boardId, request);
     }
 
+    @DeleteMapping
+    public void deleteAllBoards() {
+        boardService.deleteAllBoards();
+    }
+
     @DeleteMapping("/{boardId}")
     public void deleteBoard(@RequestHeader("user-id") Long userId, @PathVariable("boardId") Long boardId) {
         boardService.deleteBoard(userId, boardId);
