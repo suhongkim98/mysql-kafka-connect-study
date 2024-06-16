@@ -6,9 +6,34 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - "./initdb/:/docker-entrypoint-initdb.d/"
+      - "./mysql-initdb/:/docker-entrypoint-initdb.d/"
     environment:
       MYSQL_ROOT_PASSWORD: "root"
+    networks:
+      - localnet
+
+  mongodb:
+    image: mongo:7.0.11
+    container_name: x-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - "./mongo-initdb/init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+    networks:
+      - localnet
+
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express
+    ports:
+      - 9001:8081
+    environment:
+      - ME_CONFIG_MONGODB_URL=mongodb://root:root@x-mongodb:27017
+      - MONGOEXPRESS_LOGIN=root
+      - MONGOEXPRESS_PASSWORD=root
     networks:
       - localnet
 

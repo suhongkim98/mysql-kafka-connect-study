@@ -6,7 +6,7 @@
 
 # 기술스택
 * `spring boot`
-* `mysql`
+* `mysql`, `mongo`
 * `kafka`
 * `kafka connect`
 * `schema registry`

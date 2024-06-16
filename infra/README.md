@@ -14,6 +14,11 @@ docker compose up
 http://localhost:9000
 ```
 
+### 1-3. mongo express 접속
+```
+http://localhost:9001
+```
+
 
 ## 2. source connector 붙이기
 
