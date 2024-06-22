@@ -20,7 +20,7 @@ http://localhost:9001
 ```
 
 
-## 2. source connector 붙이기
+## 2. Kafka Connect source connector 붙이기
 
 ### 2-1. connector 연결
 ```bash
@@ -32,14 +32,26 @@ curl -X POST -H "Content-Type: application/json" \
 ```
 curl -X GET -H "Content-Type: application/json" \
 http://localhost:8083/connectors
-
+```
+```
 curl -X GET -H "Content-Type: application/json" \
 http://localhost:8083/connectors/{커넥터}
 ```
 
-## 3. 스키마 버전 조회
+## 3. Schema Registry
+
+### 3-1. 등록된 스키마 조회
 ```
 curl localhost:8081/subjects
+```
+```
 curl localhost:8081/subjects/{값}/versions
+```
+```
 curl localhost:8081/subjects/{값}/versions/1
+```
+
+### 3-2. 설정 조회
+```
+curl -X GET http://localhost:8081/config
 ```
